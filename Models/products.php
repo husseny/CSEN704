@@ -6,5 +6,11 @@ class products extends base {
 	function __construct(){
 		parent::__construct();
 	}
+
+	function get_products_by(){}
+
+	function get_info(){}
+
+	function update_average_rating();
 }
 ?>
