@@ -1,10 +1,10 @@
 <?php 
-include ("base.php");
+include("base.php");
 
-class products extends base {
+class carts extends base {
 
 	function __construct(){
 		parent::__construct();
 	}
-}
+} 
 ?>
