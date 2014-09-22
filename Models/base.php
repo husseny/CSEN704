@@ -9,9 +9,8 @@ class base {
 	public function __construct(){
 		try {
 			$this->pdo = new PDO("mysql:dbname=$this->dbname;host=$this->host", $this->user, $this->password);
-			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch (Exception $e) {
-			
+		} catch (PDOException $e) {
+			echo "PDO Error::" . $e->getMessage();
 		}
 	}
 } 
