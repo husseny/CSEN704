@@ -33,7 +33,8 @@ class reviews extends base {
 		return $reviews;
 	}
 }
-$reviews = new reviews();
+/* Tests */
+//$reviews = new reviews();
 /* Adding review */
 // $user_id = 1;
 // $product_id = 4;
@@ -49,6 +50,6 @@ $reviews = new reviews();
 // 
 
 // /* Getting Reviews */
-$query = "product_id = 1";
-var_dump($reviews->get_reviews_by($query));
+// $query = "product_id = 1";
+// var_dump($reviews->get_reviews_by($query));
 ?>
