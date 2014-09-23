@@ -66,7 +66,7 @@ class users extends base {
 	}
 }
 
-/* Tests 
+/* Tests */
 // $users = new users();
 
 /* Verifying User */
