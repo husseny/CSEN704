@@ -3,7 +3,7 @@ include("base.php");
 
 class reviews extends base {
 
-	function __construct(){
+	protected function __construct(){
 		parent::__construct();
 	}
 
@@ -35,6 +35,7 @@ class reviews extends base {
 }
 /* Tests */
 //$reviews = new reviews();
+
 /* Adding review */
 // $user_id = 1;
 // $product_id = 4;
@@ -46,8 +47,6 @@ class reviews extends base {
 // $user_id = 19;
 // $product_id = 2;
 // var_dump($reviews->delete($user_id, $product_id));
-
-// 
 
 // /* Getting Reviews */
 // $query = "product_id = 1";

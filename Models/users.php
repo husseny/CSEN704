@@ -3,7 +3,7 @@ include("base.php");
 
 class users extends base {
 
-	function __construct(){
+	protected function __construct(){
 		parent::__construct();
 	}
 
@@ -14,13 +14,13 @@ class users extends base {
 		return $is_successful;
 	}
 
-	function verify($params){
-		$query = "SELECT * FROM users where $params";
+	function verify($user_name, $password){
+		$query = "SELECT * FROM users where user_name = ? and password = ?";
 		$stmt = $this->pdo->prepare($query);
-		$stmt->execute();
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
-		if ($result) {
-			return true;
+		$stmt->execute(array($user_name, $password));
+		$user = $stmt->fetch(PDO::FETCH_OBJ);
+		if ($user) {
+			return $user;
 		}else {
 			return false;
 		}
