@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2014 at 03:10 PM
+-- Generation Time: Sep 23, 2014 at 03:53 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `completed` tinyint(4) NOT NULL DEFAULT '0',
+  `transaction_time` timestamp NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
