@@ -1,0 +1,77 @@
+/* user view */
+html body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
+.personal_info {
+	height: 100px;
+}
+
+.reviews {
+	height: 100px;
+}
+
+.reviews h2 {
+	margin-left: 15px;
+}
+.avatar-frame{
+	width: 250px;
+	height: 250px;
+	margin: auto;
+	border: 1px solid #E8E8E8 ;
+	border-radius: 4px;
+	margin-top: 20px;
+	margin-right: -20px;
+}
+.avatar {
+	width: 180px;
+	margin: auto;
+	padding-top: 30px;
+}
+
+.reviews_col {
+	margin: -8px;
+}
+
+.review {
+	border: 1px solid #E8E8E8 ;
+	border-radius: 4px;
+	height: 120px;
+	margin: 5px;
+}
+
+.bordered_section {
+	border: 1px solid #E8E8E8 ;
+	margin-bottom: 18px;
+}
+
+.review_content {
+	margin: 15px;
+}
+
+.time_added{
+	color: #E8E8E8 ;
+	font-size: 13px;
+}
+
+.star {
+	font-size: 2em;
+	margin-right: 2px;
+	margin-bottom: 5px;
+	color: #FFD700;
+}
+
+.star_dull {
+	font-size: 100px;
+	margin-right: 2px;
+	margin-bottom: 5px;
+	color: #E8E8E8 ;	
+}
+
+.product_thumbnail img {
+	margin-bottom: 10px;
+}
+
+.product_thumbnail span {
+	margin-bottom: 10px;
+}

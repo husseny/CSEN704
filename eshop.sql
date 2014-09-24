@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2014 at 05:09 AM
+-- Generation Time: Sep 24, 2014 at 02:38 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -99,19 +99,20 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   UNIQUE KEY `id` (`user_id`,`product_id`),
   KEY `user_id` (`user_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `reviews`
 --
 
 INSERT INTO `reviews` (`id`, `user_id`, `product_id`, `rate`, `comment`, `time_added`) VALUES
-(1, 1, 1, 5, 'Very Good', '2014-09-23 12:35:20'),
+(1, 1, 1, 5, 'I was squirming in my seat with this crazy cliff hanger ending and I am going to go crazy waiting for the next one.\nArmentrout has even furthered her hold on my attention with the 3rd Lux novel.\nHow can I resist the fire between Kat and Daemon? It makes my heart speed.\nI have recommended this series to all my book loving friends and family.\nREAD IT!!!', '2014-09-23 12:35:20'),
 (3, 2, 1, 1, 'Bad!', '2014-09-23 12:35:45'),
 (7, 19, 1, 0, 'no comment', '2014-09-23 12:39:15'),
-(16, 1, 2, 2, 'comment', '2014-09-23 13:03:23'),
-(18, 1, 3, 4, 'Lorem ipsum dolor sit amet, coomment', '2014-09-23 13:03:58'),
-(19, 1, 4, 5, 'dolor sit amet, coomment', '2014-09-23 13:04:26');
+(16, 1, 2, 2, 'This is probably my favorite season (and my favorite Doctor)\nThe pairing of David Tennant and Catherine Tate is a non-stop laugh. The chemistry is brilliant between them.', '2014-09-23 13:03:23'),
+(18, 1, 3, 4, ' picked up this book because a friend suggested it to me. I tried very hard to like it because she seemed so happy with it and I thought I just needed to keep pushing on until a good rhythm formed, but, with every new chapter my eyes rolled more and more. The writing is horribly choppy, dialog is childish and rushed, and the use of the same words and phrases over and over again just annoyed me into never wanting to pick it up again.\nIn one chapter the female lead ', '2014-09-23 13:03:58'),
+(19, 1, 4, 5, 'These are some of my son''s favorite tools in the kitchen. He loves to ask me for star eggs or heart eggs for his lunches, and sometimes just for a snack. They are easy to use, fast, and super easy to clean.\nA great addition to Bentos, parties (star shaped deviled eggs!!!) or just something fun to eat on your own.', '2014-09-23 13:04:26'),
+(20, 1, 5, 2, 'I love cutting up veggies or cheese (and sometimes pieces of sandwich or deli meats) with these.\nAnd though I am lucky enough to have a child that loves to eat his vegetables, having them in fun shapes make it all the more fun.\nThese are great for parties, too. Both children and adults will smile at a tray of carrots shaped like stars or a cheese and cracker tray covered with cheddar flowers.', '2014-09-24 10:32:44');
 
 -- --------------------------------------------------------
 
@@ -125,6 +126,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(50) NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `avatar_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
@@ -133,23 +135,23 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`) VALUES
-('namoo', 'naamoo', 'qaaaaz', 'naamoo', 1),
-('noaa', 'noaaa', '123', 'noaa', 2),
-('der', 'teri', '145', 'iserteri', 3),
-('gar', 'ghti', '1dd45', 'rin', 4),
-('', '', '', '', 5),
-('ha', 'ho', '123', 'he', 18),
-('nemo', 'keno', '123', 'usershemo', 19),
-('newo', 'keeno', '123', 'usereshemo', 21),
-('with password', 'keenopassword', '111123', 'usemo', 22),
-('with password', 'keenopassword', '111123', 'use2mo', 26),
-('withs string', 'string', '111123', 'string passw', 28),
-('withs string', 'string', 'aaaa', 'striddng passw', 30),
-('', 'string', 'aaaa', 'strpassw', 31),
-('userone', 'userone', '123', 'userone', 32),
-('userA', 'userA', '123', 'userA', 33),
-('userb', 'userb', '123', 'userb', 34);
+INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `avatar_id`) VALUES
+('namoo', 'naamoo', 'qaaaaz', 'naamoo', 1, 0),
+('noaa', 'noaaa', '123', 'noaa', 2, 0),
+('der', 'teri', '145', 'iserteri', 3, 0),
+('gar', 'ghti', '1dd45', 'rin', 4, 0),
+('', '', '', '', 5, 0),
+('ha', 'ho', '123', 'he', 18, 0),
+('nemo', 'keno', '123', 'usershemo', 19, 0),
+('newo', 'keeno', '123', 'usereshemo', 21, 0),
+('with password', 'keenopassword', '111123', 'usemo', 22, 0),
+('with password', 'keenopassword', '111123', 'use2mo', 26, 0),
+('withs string', 'string', '111123', 'string passw', 28, 0),
+('withs string', 'string', 'aaaa', 'striddng passw', 30, 0),
+('', 'string', 'aaaa', 'strpassw', 31, 0),
+('userone', 'userone', '123', 'userone', 32, 0),
+('userA', 'userA', '123', 'userA', 33, 0),
+('userb', 'userb', '123', 'userb', 34, 0);
 
 --
 -- Constraints for dumped tables

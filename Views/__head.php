@@ -4,7 +4,10 @@
 <html>
 <head>
 	<title>eShop</title>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/eshop/Assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/eshop/Assets/css/style.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="/eshop/Assets/js/jquery.js"></script>
 	<script src="/eshop/Assets/js/bootstrap.js"></script>
 </head>
