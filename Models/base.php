@@ -2,9 +2,9 @@
 abstract class base {
 	public $pdo;
 	private $host = "localhost";
-	private $user = "eshop";
+	private $user = "root";
 	private $dbname= "eshop";
-	private $password = "qJRYmAxnpEF3z7mn";
+	private $password = "";
 	static $instances = array();
 
 	protected function __construct(){
