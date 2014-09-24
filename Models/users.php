@@ -8,6 +8,13 @@ class users extends base {
 	}
 
 	function add($first_name, $last_name, $user_name, $password){
+		$query = "SELECT * FROM users where user_name = ?";
+		$stmt = $this->pdo->prepare($query);
+		$stmt->execute(array($user_name));
+		$user_exitst = $stmt->fetch();
+		if ($user_exitst){
+			return "user exists";
+		}
 		$query = "INSERT INTO users (first_name, last_name, password, user_name) VALUES (?, ?, ?, ?)";
 		$stmt = $this->pdo->prepare($query);
 		$is_successful = $stmt->execute(array($first_name, $last_name, $password, $user_name));
@@ -73,11 +80,12 @@ class users extends base {
 // echo $users->verify("user_name = 'userrone' and password = 23");
 
 /* Adding new User */
-// $query_result = $users->add("withs string", "string", "striddng passw", "aaaa");
-// if ($query_result) {
-// 	echo "The result was true";
+// $users = users::get_instance();
+// $query_result = $users->add("userone", "userone", "userone", 123);
+// if ($query_result === "user exists") {
+// 	echo "user name already exitst";
 // }else {
-// 	echo "The result was false";
+// 	echo "user successfuly registered";
 // }
 
 /* Adding new User with empty fields */

@@ -14,6 +14,30 @@ if (!isset($_SESSION['user_id'])){
 		<input type="password" name="password"></input>
 		<input type="submit" name="login_submit" value="go"></input>
 	</form>
+	<hr>
+	<?php 
+		echo isset($_SESSION['registration_message'])? $_SESSION['registration_message'] : "";
+	 ?>
+	<form name="register" method = "post" action = "/eshop/Controllers/user_controller.php" >
+		<p>first name :</p><input type="text" name="first_name"
+		value = <?php 
+			if (isset($_SESSION['registration_fields']['first_name']))
+				echo $_SESSION['registration_fields']['first_name'];
+		?> ></input>
+		<p>last name :</p><input type="text" name="last_name"
+		value = <?php 
+			if (isset($_SESSION['registration_fields']['last_name']))
+				echo $_SESSION['registration_fields']['last_name'];
+		?> ></input>
+		<p>user name :</p><input type="text" name="user_name"
+		value = <?php 
+			if (isset($_SESSION['registration_fields']['user_name']))
+				echo $_SESSION['registration_fields']['user_name'];
+		?> ></input>
+		<p>password :</p><input type="text" name="password"></input>
+		<input type="submit" name="register_submit" value="register">
+	</form>
+	<hr>
 <?php 
 } else {
 	echo "You have logged in correctly";
@@ -24,5 +48,6 @@ if (!isset($_SESSION['user_id'])){
 <?php 
 } 
 ?>
+<?php var_dump($_SESSION) ?>
 </body>
 </html>

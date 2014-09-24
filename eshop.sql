@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2014 at 03:53 PM
+-- Generation Time: Sep 24, 2014 at 05:09 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `users`
@@ -146,7 +146,10 @@ INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`) V
 ('with password', 'keenopassword', '111123', 'use2mo', 26),
 ('withs string', 'string', '111123', 'string passw', 28),
 ('withs string', 'string', 'aaaa', 'striddng passw', 30),
-('', 'string', 'aaaa', 'strpassw', 31);
+('', 'string', 'aaaa', 'strpassw', 31),
+('userone', 'userone', '123', 'userone', 32),
+('userA', 'userA', '123', 'userA', 33),
+('userb', 'userb', '123', 'userb', 34);
 
 --
 -- Constraints for dumped tables
