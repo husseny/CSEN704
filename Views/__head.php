@@ -12,40 +12,54 @@
 	<script src="/eshop/Assets/js/bootstrap.js"></script>
 </head>
 <body>
+	<div class="navbar navbar-default">
+		<div class="form-group">
 	<?php
 	if (!isset($_SESSION['user_id'])){
 		echo isset($_SESSION['login_error'])? $_SESSION['login_error'] : "";
 		unset($_SESSION['login_error']);
 	?>
-		<form name="login" method="post" action="/eshop/Controllers/user_controller.php">
-			<input type="text" name="user_name"></input>
-			<input type="password" name="password"></input>
-			<input type="submit" name="login_submit" value="go"></input>
-		</form>
-		<hr>
-		<?php 
-			echo isset($_SESSION['registration_message'])? $_SESSION['registration_message'] : "";
-		 ?>
-		<form name="register" method = "post" action = "/eshop/Controllers/user_controller.php" >
-			<p>first name :</p><input type="text" name="first_name"
-			value = <?php 
-				if (isset($_SESSION['registration_fields']['first_name']))
-					echo $_SESSION['registration_fields']['first_name'];
-			?> ></input>
-			<p>last name :</p><input type="text" name="last_name"
-			value = <?php 
-				if (isset($_SESSION['registration_fields']['last_name']))
-					echo $_SESSION['registration_fields']['last_name'];
-			?> ></input>
-			<p>user name :</p><input type="text" name="user_name"
-			value = <?php 
-				if (isset($_SESSION['registration_fields']['user_name']))
-					echo $_SESSION['registration_fields']['user_name'];
-			?> ></input>
-			<p>password :</p><input type="text" name="password"></input>
-			<input type="submit" name="register_submit" value="register">
-		</form>
-		<hr>
+			<form class="navbar-form pull-right" name="login" method="post" action="/eshop/Controllers/user_controller.php">
+				<input type="text" name="user_name"></input>
+				<input type="password" name="password"></input>
+				<input class="login btn btn-default" type="submit" name="login_submit" value="log in"></input>
+			</form>
+				 <button class="btn btn-default pull-right" data-toggle="modal" data-target="#registerModal">
+ 		Create Account
+		</button>
+		<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Create New Account</h4>
+			      </div>
+			      <div class="modal-body">
+					<form name="register" method = "post" action = "/eshop/Controllers/user_controller.php" >
+						<p>first name :</p><input type="text" name="first_name"
+						value = <?php 
+							if (isset($_SESSION['registration_fields']['first_name']))
+								echo $_SESSION['registration_fields']['first_name'];
+						?> ></input>
+						<p>last name :</p><input type="text" name="last_name"
+						value = <?php 
+							if (isset($_SESSION['registration_fields']['last_name']))
+								echo $_SESSION['registration_fields']['last_name'];
+						?> ></input>
+						<p>user name :</p><input type="text" name="user_name"
+						value = <?php 
+							if (isset($_SESSION['registration_fields']['user_name']))
+								echo $_SESSION['registration_fields']['user_name'];
+						?> ></input>
+						<p>password :</p><input type="text" name="password"></input>
+			      </div>
+			      <div class="modal-footer">
+						<input type="submit" name="register_submit" value="Done">
+					</form>					
+			      </div>
+			    </div>
+			  </div>			
+		</div>
 	<?php 
 	} else {
 	?>
@@ -54,3 +68,7 @@
 	<?php 
 	}
 	?>
+		</div>
+	</div>
+	<?php 	echo isset($_SESSION['registration_message'])? $_SESSION['registration_message'] : "";
+ ?>

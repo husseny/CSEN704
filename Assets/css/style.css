@@ -11,6 +11,12 @@ html body {
 	height: 100px;
 }
 
+.navbar .login {
+	width: 55px;
+	height: 25px;
+	font-size: 10px;
+}
+
 .reviews h2 {
 	margin-left: 15px;
 }
