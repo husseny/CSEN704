@@ -1,5 +1,5 @@
 <?php 
-include("base.php");
+include_once("base.php");
 
 class reviews extends base {
 
@@ -34,7 +34,7 @@ class reviews extends base {
 	}
 }
 /* Tests */
-//$reviews = new reviews();
+// $reviews = reviews::get_instance();
 
 /* Adding review */
 // $user_id = 1;
@@ -48,7 +48,7 @@ class reviews extends base {
 // $product_id = 2;
 // var_dump($reviews->delete($user_id, $product_id));
 
-// /* Getting Reviews */
+/* Getting Reviews */
 // $query = "product_id = 1";
 // var_dump($reviews->get_reviews_by($query));
 ?>

@@ -1,9 +1,11 @@
 <?php
-session_start();
+@session_start();
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once("$root/eshop/Models/users.php");
+include_once("$root/eshop/Models/reviews.php");
 
 $users = users::get_instance();
+
 if (isset($_POST['login_submit'])){
 	login_action();
 }else if (isset($_POST['logout_submit'])) {
@@ -54,5 +56,19 @@ function logout_action(){
 	session_destroy();
 	$new_path = "/eshop/Views/index.php";
 	echo "<script> location.replace('$new_path'); </script>";	
+}
+
+function get_profile_info($user_name){
+	global $users;
+	$params = sprintf("user_name = '%s'", $user_name);
+	$required_columns = "id, first_name, last_name, user_name, avatar_id";
+	$profile_info = $users->get_info($params, $required_columns);
+	return $profile_info;
+}
+
+function get_reviews_for_user($user_id){
+	$reviews = reviews::get_instance();
+	$params = sprintf("user_id = $user_id");
+	return $reviews->get_reviews_by($params);
 }
 ?>

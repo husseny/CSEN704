@@ -1,5 +1,5 @@
 <?php 
-include("base.php");
+include_once("base.php");
 
 class users extends base {
 
@@ -64,11 +64,11 @@ class users extends base {
 		}
 	}
 
-	function get_info($user_id, $columns){
-		$query = "SELECT $columns from users where id = ?";
+	function get_info($params, $columns){
+		$query = "SELECT $columns from users where $params";
 		$stmt = $this->pdo->prepare($query);
-		$stmt->execute(array($user_id));
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_OBJ);
 		return $result;
 	}
 }

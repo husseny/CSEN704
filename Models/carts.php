@@ -1,5 +1,5 @@
 <?php 
-include("base.php");
+include_once("base.php");
 
 class carts extends base {
 
