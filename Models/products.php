@@ -26,8 +26,6 @@ class products extends base {
 		return $result;
 	}
 
-	
-
 	function update_average_rating($product_id){
 		$sum = 0;
 		$reviews = 0;
@@ -71,7 +69,4 @@ class products extends base {
 // var_dump($products->get_info($product_id, $columns));
 // echo "done";
 
-
 ?>
-
-
