@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 24, 2014 at 04:04 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Sep 25, 2014 at 10:23 AM
+-- Server version: 5.5.38-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `eshop`
+-- Database: `eShop`
 --
 
 -- --------------------------------------------------------
@@ -29,8 +29,9 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `total_price` int(11) NOT NULL DEFAULT '0',
   `completed` tinyint(4) NOT NULL DEFAULT '0',
-  `transaction_time` timestamp NOT NULL,
+  `transaction_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

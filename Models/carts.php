@@ -9,7 +9,7 @@ class carts extends base {
 
 	function get_last_cart($user_id)
 	{
-		$query = "SELECT id FROM carts where user_id = $user_id AND completed = 0 LIMIT 0";
+		$query = "SELECT id FROM carts where user_id = $user_id AND completed = 0 LIMIT 1";
 		$exec = $this->pdo->prepare($query);
 		//$exec->execute(array($id));
 		return $exec->fetch(PDO::FETCH_OBJ);
