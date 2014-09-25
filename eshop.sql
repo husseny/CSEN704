@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2014 at 04:04 PM
+-- Generation Time: Sep 25, 2014 at 05:33 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `avatar_id`) VALUES
-('namoo', 'naamoo', 'qaaaaz', 'naamoo', 1, 0),
+('ldkfjslfkj', 'naamoo', 'qq', 'naamoo', 1, 1),
 ('noaa', 'noaaa', '123', 'noaa', 2, 0),
 ('der', 'teri', '145', 'iserteri', 3, 0),
 ('gar', 'ghti', '1dd45', 'rin', 4, 0),

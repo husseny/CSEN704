@@ -43,7 +43,6 @@ class users extends base {
 			}
 		}
 		$query .= "where id = ?";
-		echo $query;
 		$stmt = $this->pdo->prepare($query);
 		$is_successful = $stmt->execute(array($user_id));
 		return $is_successful;

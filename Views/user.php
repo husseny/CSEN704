@@ -9,7 +9,7 @@ $user_reviews = get_reviews_for_user($profile_info->id);
 <div class="container">
 	<div class="col-xs-3 personal_info">
 		<div class="avatar-frame pull-right">
-			<img src="/eshop/Assets/images/0.png" 
+			<img src=<?php echo "/eshop/Assets/images/$profile_info->avatar_id.png" ?> 
 				class="avatar img img-responsive" alt="">
 			</div>
 	</div>

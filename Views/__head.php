@@ -64,11 +64,19 @@
 	} else {
 	?>
 		<form name="logout" method="post" action ="/eshop/Controllers/user_controller.php">
-			<input type="submit" name="logout_submit" value="logout"></input>
+			<input class="login btn btn-default pull-right" type="submit" name="logout_submit" value="logout"></input>
+		</form>
+		<?php $user_name = $_SESSION['user_name'] ?>
+		<a class="btn btn-default pull-right" href=<?php echo "/eshop/Views/user.php?user_name=$user_name" ?>>
+			<?php echo $user_name ?>
+		</a>
+		<a class="btn btn-default pull-right" href="/eshop/Views/settings.php"><i class="fa fa-cog"></i></a>
 	<?php 
 	}
 	?>
 		</div>
 	</div>
 	<?php 	echo isset($_SESSION['registration_message'])? $_SESSION['registration_message'] : "";
+	unset($_SESSION['registration_message']);
+
  ?>

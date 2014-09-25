@@ -1,8 +1,16 @@
-/* user view */
+/* navbar */
 html body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
 }
+
+.navbar .login {
+	width: 55px;
+	height: 25px;
+	font-size: 10px;
+}
+
+/* user view */
 .personal_info {
 	height: 100px;
 }
@@ -11,11 +19,6 @@ html body {
 	height: 100px;
 }
 
-.navbar .login {
-	width: 55px;
-	height: 25px;
-	font-size: 10px;
-}
 
 .reviews h2 {
 	margin-left: 15px;
@@ -81,3 +84,48 @@ html body {
 .product_thumbnail span {
 	margin-bottom: 10px;
 }
+
+/* settings view */
+.settings_page {
+	background-color: #F8F8F8;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	border-radius: 3px;
+	border: 1px solid #E8E8E8;
+}
+
+.settings_tabs ul {
+	background-color: #F8F8F8;
+	border-radius: 3px;
+	border: 1px solid #E8E8E8;
+}
+
+.select_avatar {
+	text-align: center;
+	width: 150px;
+	height: 150px;
+}
+
+.col0 {
+	/*background: green;*/
+}
+
+.col2 {
+	/*background: yellow;*/
+}
+
+.avatar_list {
+	margin-left: 150px;
+	list-style: none;
+}
+
+.tab-pane {
+
+}
+
+.nav-pills > li.active.list_title > a {
+	background: #2c3e50;
+	margin: -1px;
+}
+

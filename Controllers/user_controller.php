@@ -12,6 +12,12 @@ if (isset($_POST['login_submit'])){
 	logout_action();
 }else if (isset($_POST['register_submit'])){
 	register_action();
+}else if (isset($_POST['edit_profile'])){
+	update_profile_action();
+}else if (isset($_POST['edit_password'])){
+	update_password_action();
+}else if (isset($_POST['edit_avatar'])){
+	update_avatar_action();
 }
 
 function login_action(){
@@ -71,4 +77,47 @@ function get_reviews_for_user($user_id){
 	$params = sprintf("user_id = $user_id");
 	return $reviews->get_reviews_by($params);
 }
+
+function update_profile_action(){
+	global $users;
+	$edits = $_POST['edits'];
+	$user_id = $_SESSION['user_id'];
+	$updated = $users->edit_info($user_id, $edits);
+	if ($updated) {
+		$_SESSION['update_message'] = 'Profile info was updated Successfully';
+	}else {
+		$_SESSION['update_message'] = 'Update Failed';
+	}
+	$new_path = "/eshop/Views/settings.php";
+	echo "<script> location.replace('$new_path'); </script>";
+}
+
+function update_password_action(){
+	global $users;
+	$old_password = $_POST['old_password'];
+	$new_password = $_POST['new_password'];
+	$user_id = $_SESSION['user_id'];
+	$updated = $users->edit_password($user_id, $old_password, $new_password);
+	if ($updated) {
+		$_SESSION['update_message'] = 'Password was updated Successfully';
+	}else {
+		$_SESSION['update_message'] = "Password update failed. Incorrect old password";
+	}
+	$new_path = "/eshop/Views/settings.php";
+	echo "<script> location.replace('$new_path'); </script>";
+}
+
+function update_avatar_action(){
+	global $users;
+	$edits = array("avatar_id" => $_POST['avatar_id']);
+	$user_id = $_SESSION['user_id'];
+	$updated = $users->edit_info($user_id, $edits);
+	if ($updated) {
+		$_SESSION['update_message'] = 'Avatar was updated Successfully';
+	}else {
+		$_SESSION['update_message'] = "Avatar update failed";
+	}
+	$new_path = "/eshop/Views/settings.php";
+	echo "<script> location.replace('$new_path'); </script>";
+}	
 ?>
