@@ -7,7 +7,8 @@ include_once("$root/eshop/Views/__head.php");
 $product_id = $_GET['product_id'];
 
 $product_info = get_product_info($product_id);
-$reviews = get_reviews($product_id)
+$reviews = get_reviews($product_id);
+$out_of_stock = $product_info->stock == 0 ? true:false;
 
 ?>
 
@@ -22,18 +23,18 @@ $reviews = get_reviews($product_id)
 				echo "<i class='fa fa-star fa-lg star_dull'></i>";
 			}
 		}?></h4>
-	<h4 style="color:red"><?php echo $product_info->stock == 0 ? "Out of stock :(":""; ?></h4>
+	<h4 style="color:red"><?php echo ($out_of_stock)? "Out of stock :(":""; ?></h4>
 	<h4>Price: $<?php echo $product_info->price; ?></h4>
 	<h4>Discount: <?php echo $product_info->discount; ?>%</h4>
 	<p><?php echo $product_info->description; ?></p>
 
 	<?php if (isset($_SESSION['user_id'])){ ?>
-		<form method="post" action="/eshop/Controllers/cart_controller.php\">
-			<input type="submit" name="add_to_cart" value="Add to cart"></input>
-			<input type="hidden" name="product_id" value=<?php echo "\"".$product_id."\""?>></input>
-		</form>
+	<form method="post" action="/eshop/Controllers/cart_controller.php\">
+		<input type="submit" <?php echo ($out_of_stock)? "disabled value='Out of Stock'" :"value='Add to cart'"; ?> name="add_to_cart" class="btn btn-primary btn-lg"></input>
+		<input type="hidden" name="product_id" value=<?php echo "\"".$product_id."\""?>></input>
+	</form>	
 	<?php }else{  ?>
-		<button data-toggle="modal" data-target="#login_prompt">Add to cart</button>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login_prompt">Add to cart</button>
 	<?php } ?>
 
 	<div class="modal fade" id="login_prompt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
