@@ -18,20 +18,20 @@ class carts extends base {
 		return $cart;
 	}
 
-	function get_carts($user_id)
+	function get_transactions($user_id)
 	{
 		$carts = array();
-		$query = "SELECT * FROM carts where user_id = $user_id";
+		$query = "SELECT * FROM carts where user_id = $user_id AND completed = 1";
 		$exec = $this->pdo->prepare($query);
 		$exec->execute();
 		while($cart = $exec->fetch(PDO::FETCH_OBJ)){
 			$carts[] = $cart;
 		}
-		echo count($carts);
+		//echo count($carts);
 		return $carts;
 	}
 
-	function add_product($user_id, $product_id, $quantity){
+	function edit_cart_items($user_id, $product_id, $quantity){
 		$cart = $this->get_last_cart($user_id);
 		// check if there is no cart
 		if(!$cart){
@@ -40,7 +40,7 @@ class carts extends base {
 			$stmt->execute();
 		}
 		$cart_id = $this->get_last_cart($user_id)->id;
-		echo $cart_id;
+		//echo $cart_id;
 		// check if this item was added before to this cart, and increment quantity if so.
 		$query = "SELECT * FROM carts_products WHERE cart_id = $cart_id AND product_id = $product_id";
 		$stmt = $this->pdo->prepare($query);
@@ -63,7 +63,6 @@ class carts extends base {
 		}
 		$exec = $this->pdo->prepare($query);
 		$is_successful = $exec->execute();
-		echo $is_successful;
 		$this->refresh_total_price($cart_id);
 		return $is_successful; 
 	}
@@ -79,10 +78,11 @@ class carts extends base {
 	
 	function set_complete($user_id){
 		$cart_id = $this->get_last_cart($user_id)->id;
-		$query = "UPDATE carts SET completed = 1 where id = $cart_id";
+		$query = "UPDATE carts SET completed = 1, transaction_time = NOW() where id = $cart_id AND total_price > 0";
 		$exec = $this->pdo->prepare($query);
-		$is_successful = $exec->execute();
-		return $is_successful;	
+		$exec->execute();
+		$is_successful = $exec->rowCount();
+		return $is_successful;
 	}
 
 	function change_product_quantity($user_id, $product_id, $quantity){
@@ -107,7 +107,7 @@ class carts extends base {
 		while($product = $exec->fetch(PDO::FETCH_OBJ)){
 			$products[] = $product;
 		}
-		echo count($products);
+		//echo count($products);
 		return $products;
 	}
 
@@ -131,11 +131,11 @@ class carts extends base {
 			$price = ($product->price - $product->price * $product->discount/100);
 			$stock_price = $price * $product->quantity;
 			$product_id = $product->id;
-			echo $product_id;
+			//echo $product_id;
 			
-			echo $product->price;
+			//echo $product->price;
 			$total_price += $price * $product->quantity;
-			echo $total_price;
+			//echo $total_price;
 		}
 		$query = "UPDATE carts SET total_price = $total_price where id = $cart_id";
 		$exec = $this->pdo->prepare($query);
@@ -146,9 +146,9 @@ class carts extends base {
 
 $carts = carts::get_instance();
 
-$carts->clear_products(1);
+//$carts->clear_products(1);
 //$carts->get_products(3);
-//$carts->change_product_quantity(1,4,12);
+//$carts->add_product(1,4,12);
 // $carts = carts::get_instance();
 
 // $product_id = 8;
