@@ -4,7 +4,7 @@ abstract class base {
 	private $host = "localhost";
 	private $user = "root";
 	private $dbname= "eShop";
-	private $password = "";
+	private $password = "nkujsr21oya";
 	static $instances = array();
 
 	protected function __construct(){
