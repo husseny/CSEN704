@@ -145,16 +145,11 @@ class carts extends base {
 }
 
 $carts = carts::get_instance();
+// $carts->clear_products(1);
 
-$carts->clear_products(1);
 //$carts->get_products(3);
 //$carts->change_product_quantity(1,4,12);
 // $carts = carts::get_instance();
 
-// $product_id = 8;
-// $user_id = 1;
-// $quantity = 5;
-
-// var_dump($carts->add_product($user_id, $product_id, $quantity));
-
+// $carts->set_complete($user_id);
 ?>
