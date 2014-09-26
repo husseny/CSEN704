@@ -29,14 +29,37 @@ include_once("$root/eshop/Controllers/product_controller.php");
 			$products_count = count($products_categorized);
 			$loop_counter = 0;
 			foreach($products_categorized as $product) {
-				echo "<div class='col-xs-4 well'>";
-				echo "<div class='product_box'>";
-				echo "<img src='Assets/images/product$product->image_link.jpg'></img>";
-				echo "<h3><span class='pull-left'>" . $product->title . "</span><span class='pull-right'>$" . $product->price . "</span></h3>" ;
-				echo "</div>";
+				echo "<div class='col-xs-4'>";
+				echo "	<div class='product_box'>";
+				echo "		<a href='views/product.php?product_id=$product->id'>";
+				echo "			<img src='Assets/images/product$product->image_link.jpg'></img>";
+				echo "		</a>";
+				echo "		<h3 class='row'><span class='pull-left'>";
+				echo "		<a href='views/product.php?product_id=$product->id'>";
+				echo 			$product->title ;
+				echo "			</span>";
+				echo "		</a>";				
+				echo "		</h3>" ;
+				$price = $product->price;
+				if ($product->discount){
+					$old_price = $price;
+					$price = $price - $price*$product->discount/100;
+				}
+				$user_reviews = $product->average_rating;
+				for($j = 1; $j <= 5 ; $j++){
+					if ($j <= $user_reviews){
+						echo "<i class='fa fa-star fa-lg star'></i>";
+					}else{
+						echo "<i class='fa fa-star fa-lg star_dull'></i>";
+					}
+				}				
+				echo "		<h3 class='row'><span class='pull-left'>";
+				echo (isset($old_price))?"<span class='pull-right striked'>$$old_price</span>":"";
+				echo "			<span class='pull-right'>$". number_format($price, 2). " </span>";
+				echo "		</h3>" ;
+				echo "	</div>";
 				echo "</div>";
 			}
-			echo $category;
 			echo "</div>";
 			$counter++;
 			}

@@ -2,6 +2,7 @@
 html body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
+	background: #fbfcfc;
 }
 
 .navbar .login {
@@ -132,18 +133,33 @@ html body {
 /*Home Page*/
 .product_box img {
 	height: 300px;
-	margin: auto;
-	margin-left: 25px;
+	margin-top: 30px;
+	margin-left: -5px;
 }
 
+.product_box {
+	padding: 20px;
+	height: 500px;
+	border: 1px solid #E8E8E8;
+	margin: 10px;
+	border-radius: 3px;
+	background: white;
+}
 .product_box h3 {
 	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .product_box h3 .pull-right {
 	font-weight: bold;
 }
 
+.striked {
+	text-decoration: line-through;
+	color: #e74c3c;
+	margin-left: 10px;
+}
 /* cart*/
 .center_element {
 	text-align: center;
@@ -156,3 +172,4 @@ html body {
 .bold {
 	font-weight: 400;
 }
+

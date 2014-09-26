@@ -4,15 +4,16 @@
 <html>
 <head>
 	<title>eShop</title>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/eshop/Assets/css/bootstrap.css">
 	<link rel="stylesheet" href="/eshop/Assets/css/style.css">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="/eshop/Assets/js/jquery.js"></script>
 	<script src="/eshop/Assets/js/bootstrap.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default">
+		<a class="navbar-brand" href="/eshop/">eShop</a>
 		<div class="form-group">
 	<?php
 	if (!isset($_SESSION['user_id'])){
