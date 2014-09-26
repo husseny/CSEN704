@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Sep 26, 2014 at 12:16 PM
--- Server version: 5.5.38-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.4
+-- Host: 127.0.0.1
+-- Generation Time: Sep 26, 2014 at 01:59 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `eShop`
+-- Database: `eshop`
 --
 
 -- --------------------------------------------------------
@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `products` (
   `discount` int(11) NOT NULL DEFAULT '0',
   `stock` int(11) NOT NULL,
   `average_rating` int(11) NOT NULL,
-  `image_link` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
   `added_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -83,13 +82,13 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `image_link`, `category`, `added_time`) VALUES
-(1, 'shaj', '', 12, 0, 0, 0, '', '', '2014-09-22 14:23:04'),
-(2, 'grj', '', 134, 0, 0, 0, '', '', '2014-09-22 14:23:15'),
-(3, 'tfr', '', 443, 0, 0, 0, '', '', '2014-09-22 14:23:25'),
-(4, 'product A', '', 10, 0, 1, 0, '', 'A', '2014-09-23 12:34:12'),
-(5, 'product B', '', 10, 0, 1, 0, '', 'A', '2014-09-23 12:34:18'),
-(6, 'product ', '', 10, 0, 1, 0, '', 'A', '2014-09-23 12:34:21');
+INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `category`, `added_time`) VALUES
+(1, 'shaj', 'description bababskv ihgosighrg glkasgh a giaohg  ohagi ghasgi hfs a rgishoihhghiosh s isahg hoiahgagihga ', 12, 10, 0, 0, '', '2014-09-22 14:23:04'),
+(2, 'grj', '', 134, 0, 0, 0, '', '2014-09-22 14:23:15'),
+(3, 'tfr', '', 443, 0, 0, 0, '', '2014-09-22 14:23:25'),
+(4, 'product A', '', 10, 0, 1, 0, 'A', '2014-09-23 12:34:12'),
+(5, 'product B', '', 10, 0, 1, 0, 'A', '2014-09-23 12:34:18'),
+(6, 'product ', '', 10, 0, 1, 0, 'A', '2014-09-23 12:34:21');
 
 -- --------------------------------------------------------
 
@@ -138,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `avatar_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `users`
@@ -160,7 +159,8 @@ INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `
 ('', 'string', 'aaaa', 'strpassw', 31, 0),
 ('userone', 'userone', '123', 'userone', 32, 0),
 ('userA', 'userA', '123', 'userA', 33, 0),
-('userb', 'userb', '123', 'userb', 34, 0);
+('userb', 'userb', '123', 'userb', 34, 0),
+('Ahmed', 'Moataz', 'coolsoft', 'AhmedMoataz', 35, 0);
 
 --
 -- Constraints for dumped tables
@@ -179,6 +179,9 @@ ALTER TABLE `carts_products`
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+--
+-- Database: `test`
+--
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

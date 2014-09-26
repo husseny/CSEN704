@@ -48,7 +48,7 @@ class carts extends base {
 		$product_in_cart = $stmt->fetch(PDO::FETCH_OBJ);
 		if ($product_in_cart){
 			// increment quantity
-			$quantity = $product_in_cart->quantity+$quantity;
+			$quantity = $quantity;
 			$query = "UPDATE carts_products SET quantity=$quantity
 			 WHERE cart_id = $cart_id AND product_id = $product_id";
 		}else {

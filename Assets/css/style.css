@@ -143,3 +143,16 @@ html body {
 .product_box h3 .pull-right {
 	font-weight: bold;
 }
+
+/* cart*/
+.center_element {
+	text-align: center;
+}
+
+.quantity_width {
+	width:40px;
+}
+
+.bold {
+	font-weight: 400;
+}
