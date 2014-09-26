@@ -7,6 +7,9 @@ include_once("$root/eshop/Models/reviews.php");
 
 $products = products::get_instance();
 $reviews = reviews::get_instance();
+if (isset($_POST['review'])){
+	review_action();
+}
 
 function get_product_info($product_id){
 	global $products;
@@ -20,6 +23,20 @@ function get_reviews($product_id){
 	$columns = "*";
 	$reviews = $reviews->get_reviews_by("product_id = ".$product_id);
 	return $reviews;
+}
+
+function review_action(){
+	global $products;
+	global $reviews;
+	$user_id = $_SESSION['user_id'];
+	$product_id = $_POST['product_id'];
+	$rate = $_POST['rate'];
+	$comment = $_POST['comment'];
+	$reviews->add($user_id, $product_id, $rate, $comment);
+	$products->update_average_rating($product_id);
+	$new_path = "http://localhost/eshop/Views/product.php?product_id=".$product_id;
+	echo "<script> location.replace('$new_path'); </script>";
+
 }
 
 ?>

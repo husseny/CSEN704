@@ -121,8 +121,18 @@ function update_avatar_action(){
 	echo "<script> location.replace('$new_path'); </script>";
 }
 
+// Author: Ahmed
+
 function get_username($user_id){
 	global $users;
 	return $users->get_info("id = ".$user_id, "user_name")->user_name;
-}	
+}
+
+function user_has_reviewed_product($product_id){
+	$user_id = $_SESSION['user_id'];
+	$reviews = reviews::get_instance();
+	$params = sprintf("user_id = $user_id AND product_id = $product_id");
+	return count($reviews->get_reviews_by($params)) == 1 ? true : false ;
+}
+
 ?>

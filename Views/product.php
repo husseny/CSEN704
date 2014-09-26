@@ -12,7 +12,6 @@ $reviews = get_reviews($product_id)
 ?>
 
 <div class="container">
-	<b>Hello! :D</b>
 	<h1><b><?php echo $product_info->title; ?></b></h1>
 	<img <?php echo "src=\"/eShop/Assets/images/product".$product_id.".jpg\""; ?>>
 	<h4>Rating: <?php echo $product_info->average_rating; ?></h4>
@@ -31,6 +30,22 @@ $reviews = get_reviews($product_id)
 		echo "========";
 	}
 		
+	?>
+
+	<?php
+	if (!user_has_reviewed_product($product_id)) {
+		echo "<form method=\"post\" action=\"/eshop/Controllers/product_controller.php\">";
+		echo "	Rating:";
+	   	echo "	<input type=\"radio\" name=\"rate\" value=\"1\">1";
+	   	echo "	<input type=\"radio\" name=\"rate\" value=\"2\">2";
+	   	echo "	<input type=\"radio\" name=\"rate\" value=\"3\">3";
+	   	echo "	<input type=\"radio\" name=\"rate\" value=\"4\">4";
+	   	echo "	<input type=\"radio\" name=\"rate\" value=\"5\">5";
+		echo "	<br><input type=\"text\" name=\"comment\"></input>";
+		echo "	<input type=\"hidden\" name=\"product_id\" value=\"".$product_id."\"></input>";
+		echo "	<input type=\"submit\" name=\"review\" value=\"submit\"></input>";
+		echo "</form>";
+	}
 	?>
 
 </div>
