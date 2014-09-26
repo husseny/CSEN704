@@ -17,8 +17,6 @@
 		<div class="form-group">
 	<?php
 	if (!isset($_SESSION['user_id'])){
-		echo isset($_SESSION['login_error'])? $_SESSION['login_error'] : "";
-		unset($_SESSION['login_error']);
 	?>
 			<form class="navbar-form pull-right" name="login" method="post" action="/eshop/Controllers/user_controller.php">
 				<input type="text" name="user_name"></input>
@@ -78,7 +76,17 @@
 	?>
 		</div>
 	</div>
-	<?php 	echo isset($_SESSION['registration_message'])? $_SESSION['registration_message'] : "";
-	unset($_SESSION['registration_message']);
-
+<?php 
+	if (isset($_SESSION['login_error'])) {
+		echo "<div class='alert alert-danger' role='alert'>";
+		echo $_SESSION['login_error'];
+		echo "</div>";
+		unset($_SESSION['login_error']);
+	}
+	if (isset($_SESSION['registration_message'])){
+		echo "<div class='alert alert-warning' role='alert'>";
+		echo $_SESSION['registration_message'];
+		echo "</div>";
+		unset($_SESSION['registration_message']);
+	}
  ?>
