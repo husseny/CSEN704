@@ -35,7 +35,13 @@ else if(isset($_POST['clear_products']))
 }
 else if(isset($_POST['buy_products']))
 {
-	transaction_action();
+	$result = transaction_action();
+	if (gettype($result) == "string"){
+			$_SESSION['cart_error'] = "<div class='alert alert-danger' role='alert'>$result</div>";
+			$new_path = "/eshop/Views/cart.php";
+			echo "<script> location.replace('$new_path'); </script>";
+			die();
+	}
 	$new_path = "/eshop/Views/transaction.php";
 	echo "<script> location.replace('$new_path'); </script>";
 	die();
@@ -45,7 +51,7 @@ elseif (isset($_POST['add_to_cart'])) {
 	global $products;
 	$product_id = $_POST['product_id'];
 	edit_cart_action($product_id, 1);
-	$new_path = "http://localhost/eshop/Views/cart.php";
+	$new_path = "/eshop/Views/cart.php";
 	echo "<script> location.replace('$new_path'); </script>";
 }
 
@@ -72,8 +78,10 @@ function transaction_action()
 {
 	global $user_id;
 	global $carts;
-	if(isset($user_id))
-		return $carts->set_complete($user_id);
+	if(isset($user_id)){
+		$result = $carts->set_complete($user_id);
+			return $result;
+		}
 	return 0;
 }
 

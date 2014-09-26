@@ -38,7 +38,7 @@ include_once("$root/eshop/Views/__cart_info.php");
         <h4 class="modal-title" id="myModalLabel">Checkout </h4>
       </div>
       <div class="modal-body">
-      		Confirm buying products in list with <?php echo $cart->total_price; ?> LE?
+      		Confirm buying products in list with $<?php echo $cart->total_price; ?>?
       </div>
       <div class="modal-footer">
         <form name="buy" method="post" 

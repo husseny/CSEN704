@@ -1,3 +1,8 @@
+<?php if (isset($_SESSION['cart_error'])) {
+    echo $_SESSION['cart_error'];
+    echo "XXXXXXXXXX";
+    unset($_SESSION['cart_error']);
+} ?>
 <table class="table table-hover">
 <tr>
     <td class="col-md-6"><b>Product</b></td>

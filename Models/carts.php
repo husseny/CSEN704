@@ -78,6 +78,25 @@ class carts extends base {
 	
 	function set_complete($user_id){
 		$cart_id = $this->get_last_cart($user_id)->id;
+		$query = "SELECT * From carts_products cp INNER JOIN products p ON cp.product_id = p.id 
+		where cp.cart_id = $cart_id";
+		$exec = $this->pdo->prepare($query);
+		$exec->execute();
+		while($product = $exec->fetch(PDO::FETCH_OBJ)){
+			$quantity_requested = $product->quantity;
+			$quantity_in_stock = $product->stock;
+			if ($quantity_in_stock > $quantity_requested){
+				$new_stock = $quantity_in_stock - $quantity_requested;
+				$query = "Update products SET stock = $new_stock WHERE id = $product->id";
+				$stmt = $this->pdo->prepare($query);
+				$stmt->execute();
+			}else {
+				return "Stock of product $product->title is not enough for the amount you requested";
+			}
+		}
+
+
+
 		$query = "UPDATE carts SET completed = 1, transaction_time = NOW() where id = $cart_id AND total_price > 0";
 		$exec = $this->pdo->prepare($query);
 		$exec->execute();
@@ -147,4 +166,13 @@ class carts extends base {
 $carts = carts::get_instance();
 // $carts->clear_products(1);
 
+// $user_id = 1;
+// $result = $carts->set_complete($user_id);
+// if (gettype($result) == "string"){
+// 	$_SESSION['cart_error'] = $result;
+// 	$new_path = "/eshop/Views/cart.php";
+// 	echo "<script> location.replace('$new_path'); </script>";
+// }else {
+// 	return $result;
+// }
 ?>
