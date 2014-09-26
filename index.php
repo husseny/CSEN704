@@ -8,7 +8,7 @@ include_once("$root/eshop/Controllers/product_controller.php");
 	<div class="row">
 		<div class="categories">
 			<ul class="nav nav-tabs nav-pills" role="tablist">
-				<li class="active"><a href="#Electronics" role="tab" data-toggle="tab">Products</a></li>
+				<li class="hidden active"><a href="#Electronics" role="tab" data-toggle="tab">Products</a></li>
 			</ul>
 		</div>
 	</div>

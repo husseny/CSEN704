@@ -10,7 +10,16 @@ html body {
 	height: 25px;
 	font-size: 10px;
 }
+.navbarbutton {
+	width: 80px;
+	padding: 5px;
+	height: 30px;
+	margin-left: 10px;
+}
 
+.hidder {
+	visibility: none;
+}
 /* user view */
 .personal_info {
 	height: 100px;
