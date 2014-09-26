@@ -53,7 +53,6 @@
 								echo $_SESSION['registration_fields']['user_name'];
 						?> ></input>
 						<p>password</p><input type="password" name="password"></input>
-			      		</form>
 			      </div>
 			      <div class="modal-footer">
 						<input type="submit" name="register_submit" value="Done">
