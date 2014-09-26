@@ -85,7 +85,7 @@ class carts extends base {
 		while($product = $exec->fetch(PDO::FETCH_OBJ)){
 			$quantity_requested = $product->quantity;
 			$quantity_in_stock = $product->stock;
-			if ($quantity_in_stock > $quantity_requested){
+			if ($quantity_in_stock >= $quantity_requested){
 				$new_stock = $quantity_in_stock - $quantity_requested;
 				$query = "Update products SET stock = $new_stock WHERE id = $product->id";
 				$stmt = $this->pdo->prepare($query);
@@ -94,9 +94,6 @@ class carts extends base {
 				return "Stock of product $product->title is not enough for the amount you requested";
 			}
 		}
-
-
-
 		$query = "UPDATE carts SET completed = 1, transaction_time = NOW() where id = $cart_id AND total_price > 0";
 		$exec = $this->pdo->prepare($query);
 		$exec->execute();
