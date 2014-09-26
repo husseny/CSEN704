@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 02:56 PM
+-- Generation Time: Sep 26, 2014 at 07:25 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `carts` (
   `transaction_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `carts`
@@ -44,7 +44,15 @@ INSERT INTO `carts` (`id`, `user_id`, `total_price`, `completed`, `transaction_t
 (4, 1, 160, 1, NULL),
 (5, 1, 670, 0, NULL),
 (6, 2, 96, 1, '2014-09-26 12:41:25'),
-(7, 2, 38, 0, NULL);
+(7, 2, 8, 1, '2014-09-26 14:28:29'),
+(8, 2, 8, 1, '2014-09-26 14:29:02'),
+(9, 2, 8, 1, '2014-09-26 14:36:32'),
+(10, 2, 8, 1, '2014-09-26 15:52:53'),
+(11, 2, 8, 1, '2014-09-26 15:55:20'),
+(12, 2, 32, 1, '2014-09-26 15:57:06'),
+(13, 2, 8, 1, '2014-09-26 15:57:38'),
+(14, 2, 16, 1, '2014-09-26 15:58:08'),
+(15, 2, 8, 1, '2014-09-26 16:13:58');
 
 -- --------------------------------------------------------
 
@@ -70,7 +78,15 @@ INSERT INTO `carts_products` (`cart_id`, `product_id`, `quantity`, `item_price`)
 (4, 1, 5, 12),
 (5, 2, 5, 134),
 (6, 1, 10, 10),
-(7, 1, 4, 10);
+(7, 4, 1, 8),
+(8, 5, 1, 8),
+(9, 4, 1, 8),
+(10, 4, 1, 8),
+(11, 4, 1, 8),
+(12, 4, 4, 8),
+(13, 5, 1, 8),
+(14, 5, 2, 8),
+(15, 6, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -97,12 +113,12 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `image_link`, `category`, `added_time`) VALUES
-(1, 'Zombie Fluxx', '', 12, 20, 0, 3, '1', 'Electronics', '2014-09-22 14:23:04'),
-(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, '2', 'Electronics', '2014-09-22 14:23:15'),
-(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, '3', 'Electronics', '2014-09-22 14:23:25'),
-(4, 'Cthulhu Fluxx', '', 10, 20, 1, 5, '4', 'Electronics', '2014-09-23 12:34:12'),
-(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 1, 2, '5', 'Electronics', '2014-09-23 12:34:18'),
-(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 1, 6, '6', 'Electronics', '2014-09-23 12:34:21');
+(1, 'Zombie Fluxx', '', 12, 20, 0, 3, 'product1', 'Electronics', '2014-09-22 14:23:04'),
+(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, 'product2', 'Electronics', '2014-09-22 14:23:15'),
+(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, 'product3', 'Electronics', '2014-09-22 14:23:25'),
+(4, 'Cthulhu Fluxx', '', 10, 20, 0, 5, 'product4', 'Electronics', '2014-09-23 12:34:12'),
+(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 0, 2, 'product5', 'Electronics', '2014-09-23 12:34:18'),
+(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 3, 6, 'product6', 'Electronics', '2014-09-23 12:34:21');
 
 -- --------------------------------------------------------
 
@@ -151,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `avatar_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `users`
@@ -173,7 +189,9 @@ INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `
 ('', 'string', 'aaaa', 'strpassw', 31, 0),
 ('userone', 'userone', '123', 'userone', 32, 0),
 ('userA', 'userA', '123', 'userA', 33, 0),
-('userb', 'userb', '123', 'userb', 34, 0);
+('userb', 'userb', '123', 'userb', 34, 0),
+('', '', '', 'noaad', 35, 0),
+('', '', '', 'noaazzzz', 36, 0);
 
 --
 -- Constraints for dumped tables
