@@ -1,10 +1,11 @@
+<!-- Author: Mohab -->
 <?php 
 abstract class base {
 	public $pdo;
 	private $host = "localhost";
 	private $user = "root";
 	private $dbname= "eShop";
-	private $password = "nkujsr21oya";
+	private $password = "";
 	static $instances = array();
 
 	protected function __construct(){

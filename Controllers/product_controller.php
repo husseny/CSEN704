@@ -12,4 +12,10 @@ function get_product_info($product_id){
 	return $product_info;
 }
 
+function get_products_by_category($category){
+	global $products;
+	$params = "category = \"$category\"";
+	$products_by_category = $products->get_products_by($params);
+	return $products_by_category;
+}
 ?>

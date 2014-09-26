@@ -1,3 +1,4 @@
+<!-- Author: Mohab -->
 <section class="row">
 	<h2>
 	<?php 

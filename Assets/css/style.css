@@ -129,3 +129,17 @@ html body {
 	margin: -1px;
 }
 
+/*Home Page*/
+.product_box img {
+	height: 300px;
+	margin: auto;
+	margin-left: 25px;
+}
+
+.product_box h3 {
+	text-align: center;
+}
+
+.product_box h3 .pull-right {
+	font-weight: bold;
+}
