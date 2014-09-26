@@ -1,3 +1,4 @@
+<!-- Author: Mohab -->
 <?php 
 abstract class base {
 	public $pdo;

@@ -18,6 +18,13 @@ function get_product_info($product_id){
 	return $product_info;
 }
 
+function get_products_by_category($category){
+	global $products;
+	$params = "category = \"$category\"";
+	$products_by_category = $products->get_products_by($params);
+	return $products_by_category;
+}
+
 function get_reviews($product_id){
 	global $reviews;
 	$columns = "*";
@@ -36,7 +43,5 @@ function review_action(){
 	$products->update_average_rating($product_id);
 	$new_path = "http://localhost/eshop/Views/product.php?product_id=".$product_id;
 	echo "<script> location.replace('$new_path'); </script>";
-
 }
-
 ?>

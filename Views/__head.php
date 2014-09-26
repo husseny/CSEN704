@@ -13,6 +13,7 @@
 </head>
 <body>
 	<div class="navbar navbar-default">
+		<a class="navbar-brand" href="/eshop/">eShop</a>
 		<div class="form-group">
 	<?php
 	if (!isset($_SESSION['user_id'])){
