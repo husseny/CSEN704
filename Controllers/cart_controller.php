@@ -12,6 +12,35 @@ $cart_id = $carts->get_last_cart(1)->id;
 	$user_id = $_SESSION['user_id'];
 //echo $user_id;
 
+if (isset($_POST['edit_quantity'])){
+	if(!empty($_POST['quantity']))
+		edit_cart_action($_POST['product'],$_POST['quantity']);
+	$new_path = "/eshop/Views/cart.php";
+	echo "<script> location.replace('$new_path'); </script>";
+	die();
+}
+else if(isset($_POST['delete_item']))
+{
+	delete_product_action($_POST['product']);
+	$new_path = "/eshop/Views/cart.php";
+	echo "<script> location.replace('$new_path'); </script>";
+	die();
+}
+else if(isset($_POST['clear_products']))
+{
+	clear_cart_action();
+	$new_path = "/eshop/Views/cart.php";
+	echo "<script> location.replace('$new_path'); </script>";
+	die();
+}
+else if(isset($_POST['buy_products']))
+{
+	transaction_action();
+	$new_path = "/eshop/Views/transaction.php";
+	echo "<script> location.replace('$new_path'); </script>";
+	die();
+}
+
 function edit_cart_action($product_id, $quantity){
 	//
 	global $user_id;
@@ -94,7 +123,7 @@ function clear_cart_action(){
 }
 
 //TESTING CODE:
-$r = edit_cart_action(4,3);
+//$r = edit_cart_action(5,5);
 //$r = delete_product_action(4);
 //echo "string";
 //$r = transaction_action();
