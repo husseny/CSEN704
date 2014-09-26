@@ -15,7 +15,14 @@ $out_of_stock = $product_info->stock == 0 ? true:false;
 <div class="container">
 	<h1><b><?php echo $product_info->title; ?></b></h1>
 	<img <?php echo "src=\"/eShop/Assets/images/product".$product_id.".jpg\""; ?>>
-	<h4>Rating: <?php echo $product_info->average_rating; ?></h4>
+	<h4>Rating: <?php 
+			for($j = 1; $j <= 5 ; $j++){
+			if ($j <= $product_info->average_rating){
+				echo "<i class='fa fa-star fa-lg star'></i>";
+			}else{
+				echo "<i class='fa fa-star fa-lg star_dull'></i>";
+			}
+		}?></h4>
 	<h4 style="color:red"><?php echo ($out_of_stock)? "Out of stock :(":""; ?></h4>
 	<h4>Price: $<?php echo $product_info->price; ?></h4>
 	<h4>Discount: <?php echo $product_info->discount; ?>%</h4>
@@ -30,8 +37,17 @@ $out_of_stock = $product_info->stock == 0 ? true:false;
 	<?php
 	foreach ($reviews as $review) {
 		echo "<br><b>".get_username($review->user_id)."</b>";
-		echo " - ".$review->time_added;
-		echo "<br>Rating: ".$review->rate;
+		echo " - ". substr($review->time_added,0,10);
+		$user_rating = $review->rate;;
+		echo "<p>";
+		for($j = 1; $j <= 5 ; $j++){
+			if ($j <= $user_rating){
+				echo "<i class='fa fa-star fa-lg star'></i>";
+			}else{
+				echo "<i class='fa fa-star fa-lg star_dull'></i>";
+			}
+		}
+		echo "</p>";
 		echo "<br><p>".$review->comment."</p>";
 		echo "========";
 	}
