@@ -15,7 +15,7 @@ include_once("$root/eshop/Controllers/product_controller.php");
 			</ul>
 		</div>
 	</div>
-	<div class="tab-content">
+	<div class="categories_content">
 		<?php 
 		$categories = ['Electronics', 'Art', 'Games', 'Sport'];
 		$counter = 0;
@@ -38,8 +38,11 @@ include_once("$root/eshop/Controllers/product_controller.php");
 				echo "		<a href='views/product.php?product_id=$product->id'>";
 				echo 			$product->title ;
 				echo "			</span>";
-				echo "		</a>";				
+				echo "		</a>";
 				echo "		</h3>" ;
+				if (!$product->stock){
+					echo "<p class='stock'>out of stock</p>";
+				}							
 				$price = $product->price;
 				if ($product->discount){
 					$old_price = $price;

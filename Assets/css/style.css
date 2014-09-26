@@ -131,6 +131,9 @@ html body {
 }
 
 /*Home Page*/
+.categories_content {
+	margin-top: 30px;
+}
 .product_box img {
 	height: 300px;
 	margin-top: 30px;
@@ -139,7 +142,7 @@ html body {
 
 .product_box {
 	padding: 20px;
-	height: 500px;
+	height: 520px;
 	border: 1px solid #E8E8E8;
 	margin: 10px;
 	border-radius: 3px;
@@ -154,7 +157,13 @@ html body {
 .product_box h3 .pull-right {
 	font-weight: bold;
 }
-
+.stock {
+	font-weight: bold;
+	font-size: 12px;
+	color: #e74c3c;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
 .striked {
 	text-decoration: line-through;
 	color: #e74c3c;
