@@ -3,7 +3,9 @@
 	<?php 
 	foreach ($results as $result) {
 		$cart = $result['cart'];
-		$products = $result['products'];
-		include("$root/eshop/Views/__cart_info.php");
+		echo "<div class='transaction'>";
+			$products = $result['products'];
+			include("$root/eshop/Views/__cart_info.php");
+		echo "</div>";
 	} ?>
 </section>
