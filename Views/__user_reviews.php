@@ -21,7 +21,7 @@
 		$product = get_product_info($user_reviews[$i]->product_id);
 		$image_link = $product->image_link;
 		$output .= "			<a href='/eshop/Views/product.php?product_id=$product->id'>";
-		$output .= "				<img src='../Assets/images/product$image_link.jpg'>";
+		$output .= "				<img src='../Assets/images/$image_link.jpg'>";
 		$output .= "			</a>";
 		$output .= "	</div>";
 		$output .= "	<a href='/eshop/Views/product.php?product_id=$product->id'>";

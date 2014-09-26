@@ -32,7 +32,7 @@ include_once("$root/eshop/Controllers/product_controller.php");
 				echo "<div class='col-xs-4'>";
 				echo "	<div class='product_box'>";
 				echo "		<a href='views/product.php?product_id=$product->id'>";
-				echo "			<img class='img img-responsive' src='Assets/images/product$product->image_link.jpg'></img>";
+				echo "			<img class='img img-responsive' src='Assets/images/$product->image_link.jpg'></img>";
 				echo "		</a>";
 				echo "		<h3 class='row'><span class='pull-left'>";
 				echo "		<a href='views/product.php?product_id=$product->id'>";
