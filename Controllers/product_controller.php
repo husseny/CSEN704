@@ -7,7 +7,7 @@ include_once("$root/eshop/Models/reviews.php");
 
 $products = products::get_instance();
 $reviews = reviews::get_instance();
-if (isset($_POST['review'])){
+if (isset($_POST['review'])) {
 	review_action();
 }
 

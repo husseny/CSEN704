@@ -20,6 +20,11 @@ $reviews = get_reviews($product_id)
 	<h4>Discount: <?php echo $product_info->discount; ?>%</h4>
 	<p><?php echo $product_info->description; ?></p>
 
+<form method="post" action="/eshop/Controllers/cart_controller.php\">
+	<input type="submit" name="add_to_cart" value="Add to cart"></input>
+	<input type="hidden" name="product_id" value=<?php echo "\"".$product_id."\""?>></input>
+</form>	
+
 	<h3>Reviews:</h3>
 	<?php
 	foreach ($reviews as $review) {
@@ -47,6 +52,8 @@ $reviews = get_reviews($product_id)
 		echo "</form>";
 	}
 	?>
+
+
 
 </div>
 

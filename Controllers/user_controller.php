@@ -115,7 +115,7 @@ function update_avatar_action(){
 	$updated = $users->edit_info($user_id, $edits);
 	if ($updated) {
 		$_SESSION['update_message'] = 'Avatar was updated Successfully';
-	}else {
+	} else {
 		$_SESSION['update_message'] = "Avatar update failed";
 	}
 	$new_path = "/eshop/Views/settings.php";
@@ -130,10 +130,14 @@ function get_username($user_id){
 }
 
 function user_has_reviewed_product($product_id){
-	$user_id = $_SESSION['user_id'];
-	$reviews = reviews::get_instance();
-	$params = sprintf("user_id = $user_id AND product_id = $product_id");
-	return count($reviews->get_reviews_by($params)) == 1 ? true : false ;
+	if (isset($_POST['user_id'])){
+		$user_id = $_SESSION['user_id'];
+		$reviews = reviews::get_instance();
+		$params = sprintf("user_id = $user_id AND product_id = $product_id");
+		return count($reviews->get_reviews_by($params)) == 1 ? true : false ;
+	} else {
+		return true; //user not signed in
+	}
 }
 
 ?>
