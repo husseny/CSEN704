@@ -36,7 +36,7 @@ $reviews = get_reviews($product_id)
 	<?php
 	foreach ($reviews as $review) {
 		echo "<br><b>".get_username($review->user_id)."</b>";
-		echo " - ".$review->time_added;
+		echo " - ". substr($review->time_added,0,10);
 		$user_rating = $review->rate;;
 		echo "<p>";
 		for($j = 1; $j <= 5 ; $j++){
