@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 01:59 PM
+-- Generation Time: Sep 26, 2014 at 02:56 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -34,15 +34,17 @@ CREATE TABLE IF NOT EXISTS `carts` (
   `transaction_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `carts`
 --
 
 INSERT INTO `carts` (`id`, `user_id`, `total_price`, `completed`, `transaction_time`) VALUES
-(2, 1, 0, 1, '2014-09-25 21:36:39'),
-(3, 1, 0, 0, '0000-00-00 00:00:00');
+(4, 1, 160, 1, NULL),
+(5, 1, 670, 0, NULL),
+(6, 2, 96, 1, '2014-09-26 12:41:25'),
+(7, 2, 38, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -59,6 +61,17 @@ CREATE TABLE IF NOT EXISTS `carts_products` (
   KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `carts_products`
+--
+
+INSERT INTO `carts_products` (`cart_id`, `product_id`, `quantity`, `item_price`) VALUES
+(4, 6, 10, 10),
+(4, 1, 5, 12),
+(5, 2, 5, 134),
+(6, 1, 10, 10),
+(7, 1, 4, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `discount` int(11) NOT NULL DEFAULT '0',
   `stock` int(11) NOT NULL,
   `average_rating` int(11) NOT NULL,
+  `image_link` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
   `added_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -82,13 +96,13 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `category`, `added_time`) VALUES
-(1, 'shaj', 'description bababskv ihgosighrg glkasgh a giaohg  ohagi ghasgi hfs a rgishoihhghiosh s isahg hoiahgagihga ', 12, 10, 0, 0, '', '2014-09-22 14:23:04'),
-(2, 'grj', '', 134, 0, 0, 0, '', '2014-09-22 14:23:15'),
-(3, 'tfr', '', 443, 0, 0, 0, '', '2014-09-22 14:23:25'),
-(4, 'product A', '', 10, 0, 1, 0, 'A', '2014-09-23 12:34:12'),
-(5, 'product B', '', 10, 0, 1, 0, 'A', '2014-09-23 12:34:18'),
-(6, 'product ', '', 10, 0, 1, 0, 'A', '2014-09-23 12:34:21');
+INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `image_link`, `category`, `added_time`) VALUES
+(1, 'Zombie Fluxx', '', 12, 20, 0, 3, '1', 'Electronics', '2014-09-22 14:23:04'),
+(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, '2', 'Electronics', '2014-09-22 14:23:15'),
+(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, '3', 'Electronics', '2014-09-22 14:23:25'),
+(4, 'Cthulhu Fluxx', '', 10, 20, 1, 5, '4', 'Electronics', '2014-09-23 12:34:12'),
+(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 1, 2, '5', 'Electronics', '2014-09-23 12:34:18'),
+(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 1, 6, '6', 'Electronics', '2014-09-23 12:34:21');
 
 -- --------------------------------------------------------
 
@@ -137,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `avatar_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `users`
@@ -145,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `avatar_id`) VALUES
 ('namoo', 'naamoo', 'qaaaaz', 'naamoo', 1, 0),
-('noaa', 'noaaa', '123', 'noaa', 2, 0),
+('noaa', 'noaaa', '123', 'noaa', 2, 3),
 ('der', 'teri', '145', 'iserteri', 3, 0),
 ('gar', 'ghti', '1dd45', 'rin', 4, 0),
 ('', '', '', '', 5, 0),
@@ -159,8 +173,7 @@ INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `
 ('', 'string', 'aaaa', 'strpassw', 31, 0),
 ('userone', 'userone', '123', 'userone', 32, 0),
 ('userA', 'userA', '123', 'userA', 33, 0),
-('userb', 'userb', '123', 'userb', 34, 0),
-('Ahmed', 'Moataz', 'coolsoft', 'AhmedMoataz', 35, 0);
+('userb', 'userb', '123', 'userb', 34, 0);
 
 --
 -- Constraints for dumped tables
@@ -179,9 +192,6 @@ ALTER TABLE `carts_products`
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
---
--- Database: `test`
---
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
