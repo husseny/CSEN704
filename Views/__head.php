@@ -71,6 +71,7 @@
 			<?php echo $user_name ?>
 		</a>
 		<a class="btn btn-default pull-right" href="/eshop/Views/settings.php"><i class="fa fa-cog"></i></a>
+		<a class="btn btn-default pull-right" href="/eshop/Views/cart.php">My Cart</a>
 	<?php 
 	}
 	?>
