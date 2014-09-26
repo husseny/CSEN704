@@ -41,6 +41,12 @@ function register_action(){
 	$last_name = $_POST['last_name'];
 	$user_name = $_POST['user_name'];
 	$password = $_POST['password'];
+	if (empty($first_name) || empty($last_name || empty($user_name) || $password)){
+		$_SESSION['login_error'] = "Registration fields can't be empty";
+		$new_path = "/eshop/index.php";
+		echo "<script> location.replace('$new_path'); </script>";
+		die();
+	}
 	$result = $users->add($first_name, $last_name, $user_name, $password);
 	if ($result === "user exists") {
 		$_SESSION['registration_fields'] = array(
