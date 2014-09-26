@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 07:27 PM
+-- Generation Time: Sep 26, 2014 at 08:53 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -106,19 +106,23 @@ CREATE TABLE IF NOT EXISTS `products` (
   `category` varchar(50) NOT NULL,
   `added_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `image_link`, `category`, `added_time`) VALUES
-(1, 'Zombie Fluxx', '', 12, 20, 0, 3, 'product1', 'games', '2014-09-22 14:23:04'),
-(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, 'product2', 'games', '2014-09-22 14:23:15'),
-(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, 'product3', 'games', '2014-09-22 14:23:25'),
-(4, 'Cthulhu Fluxx', '', 10, 20, 0, 5, 'product4', 'games', '2014-09-23 12:34:12'),
-(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 0, 2, 'product5', 'games', '2014-09-23 12:34:18'),
-(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 3, 6, 'product6', 'games', '2014-09-23 12:34:21');
+(1, 'Zombie Fluxx', '', 12, 20, 0, 3, 'product1', 'Electronics', '2014-09-22 14:23:04'),
+(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, 'product2', 'Electronics', '2014-09-22 14:23:15'),
+(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, 'product3', 'Electronics', '2014-09-22 14:23:25'),
+(4, 'Cthulhu Fluxx', '', 10, 20, 0, 5, 'product4', 'Electronics', '2014-09-23 12:34:12'),
+(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 0, 2, 'product5', 'Electronics', '2014-09-23 12:34:18'),
+(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 3, 6, 'product6', 'Electronics', '2014-09-23 12:34:21'),
+(7, 'Trofeo Monza Men''s Road/Racing', 'Fuji collapsible/folding bike. It is a special edition MARLBORO bike given out during a promotion in the 80''s I believe. Has a few scratches and scuffs and definitely shows wear from age and use. There is some surface rust in areas, especially on the seat post. The bike collapses with ease. It basically folds in half', 169, 10, 5, 3, 'product7', 'Electronics', '2014-09-26 17:44:35'),
+(8, 'fitbit zip Activity Tracker', 'This is a factory sealed unopened fitbit zip.\r\n\r\nWhat''s included: Tracker, Clip, Battery, Wireless USB dongle, Battery tool, Free Fitbit Account. \r\n\r\n It is also compatible with Windows XP, and Mac OS 10.5.\r\n\r\n It Syncs with iPhone 4S, and Bluetooth 4.0 or Bluetooth Smart Ready devices.', 120, 0, 12, 3, 'fitbit', 'Electronics', '2014-09-26 17:44:35'),
+(9, 'HTC-One-X-16GB-', 'Bedienung über Touchscreen, Digitaler Pegelmesser, AF-Sperre, GPS-fähig, USB 2.0-Kompatibilität, Auto Lighting Optimiser, Chromatic Aberration Compensation (CAC), Gesichtserkennung, digitale Bildrotation, RGB-Primärfarbfilter, Eye-Fi-Karte möglich, RAW-Bearbeitung in Kamera, Multiframe-Rauschreduzierung, Exif Print-Unterstützung, LCD-M', 124, 12, 12, 4, 'htc', 'Electronics', '2014-09-26 17:51:40'),
+(10, 'Canon EOS 70D 20,0 MP Digitalkamera', 'LCD-Monitor mit Live-Bild-Modus, 1080p Full HD-Filmaufnahme, Helligkeitsregelung der Anzeige, Highlight Point Display, Scene Intelligent Auto-Technologie, direkt Druck, Erkennung der Kameraausrichtung, AE-Schloss, DPOF Support, Schärfentiefekontrolle,', 949, 40, 15, 3, 'canon', 'Electronics', '2014-09-26 17:51:40');
 
 -- --------------------------------------------------------
 
