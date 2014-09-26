@@ -40,6 +40,13 @@ else if(isset($_POST['buy_products']))
 	echo "<script> location.replace('$new_path'); </script>";
 	die();
 }
+elseif (isset($_POST['add_to_cart'])) {
+	global $products;
+	$product_id = $_POST['product_id'];
+	edit_cart_action($product_id, 1);
+	$new_path = "http://localhost/eshop/Views/cart.php";
+	echo "<script> location.replace('$new_path'); </script>";
+}
 
 function edit_cart_action($product_id, $quantity){
 	//
