@@ -29,7 +29,7 @@ function login_action(){
 	}else {
 		$_SESSION['login_error'] = "Wrong User Name or Password";
 	}
-		$new_path = "/eshop/Views/index.php";
+		$new_path = "/eshop/index.php";
 		echo "<script> location.replace('$new_path'); </script>";
 }
 
@@ -52,7 +52,7 @@ function register_action(){
 		unset($_SESSION['registraion_message']);
 		unset($_SESSION['registration_fields']);
 	}
-		$new_path = "/eshop/Views/index.php";
+		$new_path = "/eshop/index.php";
 		echo "<script> location.replace('$new_path'); </script>";
 	
 }
@@ -60,7 +60,7 @@ function register_action(){
 function logout_action(){
 	unset($_SESSION);
 	session_destroy();
-	$new_path = "/eshop/Views/index.php";
+	$new_path = "/eshop/index.php";
 	echo "<script> location.replace('$new_path'); </script>";	
 }
 
