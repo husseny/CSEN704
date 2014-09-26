@@ -37,22 +37,23 @@
 			      </div>
 			      <div class="modal-body">
 					<form name="register" method = "post" action = "/eshop/Controllers/user_controller.php" >
-						<p>first name :</p><input type="text" name="first_name"
+						<p>first name</p><input type="text" name="first_name"
 						value = <?php 
 							if (isset($_SESSION['registration_fields']['first_name']))
 								echo $_SESSION['registration_fields']['first_name'];
 						?> ></input>
-						<p>last name :</p><input type="text" name="last_name"
+						<p>last name</p><input type="text" name="last_name"
 						value = <?php 
 							if (isset($_SESSION['registration_fields']['last_name']))
 								echo $_SESSION['registration_fields']['last_name'];
 						?> ></input>
-						<p>user name :</p><input type="text" name="user_name"
+						<p>user name</p><input type="text" name="user_name"
 						value = <?php 
 							if (isset($_SESSION['registration_fields']['user_name']))
 								echo $_SESSION['registration_fields']['user_name'];
 						?> ></input>
-						<p>password :</p><input type="text" name="password"></input>
+						<p>password</p><input type="password" name="password"></input>
+			      		</form>
 			      </div>
 			      <div class="modal-footer">
 						<input type="submit" name="register_submit" value="Done">
