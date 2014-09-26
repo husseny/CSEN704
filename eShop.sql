@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 07:25 PM
+-- Generation Time: Sep 26, 2014 at 07:27 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -113,12 +113,12 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stock`, `average_rating`, `image_link`, `category`, `added_time`) VALUES
-(1, 'Zombie Fluxx', '', 12, 20, 0, 3, 'product1', 'Electronics', '2014-09-22 14:23:04'),
-(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, 'product2', 'Electronics', '2014-09-22 14:23:15'),
-(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, 'product3', 'Electronics', '2014-09-22 14:23:25'),
-(4, 'Cthulhu Fluxx', '', 10, 20, 0, 5, 'product4', 'Electronics', '2014-09-23 12:34:12'),
-(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 0, 2, 'product5', 'Electronics', '2014-09-23 12:34:18'),
-(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 3, 6, 'product6', 'Electronics', '2014-09-23 12:34:21');
+(1, 'Zombie Fluxx', '', 12, 20, 0, 3, 'product1', 'games', '2014-09-22 14:23:04'),
+(2, 'Monty Python Fluxx', '', 134, 20, 0, 1, 'product2', 'games', '2014-09-22 14:23:15'),
+(3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, 'product3', 'games', '2014-09-22 14:23:25'),
+(4, 'Cthulhu Fluxx', '', 10, 20, 0, 5, 'product4', 'games', '2014-09-23 12:34:12'),
+(5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 0, 2, 'product5', 'games', '2014-09-23 12:34:18'),
+(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 3, 6, 'product6', 'games', '2014-09-23 12:34:21');
 
 -- --------------------------------------------------------
 
