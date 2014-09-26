@@ -17,7 +17,7 @@ $out_of_stock = $product_info->stock == 0 ? true:false;
 	<div class="container">
 		<h1><b><?php echo $product_info->title; ?></b></h1>
 		<div class="col-xs-3">
-			<img <?php echo "src=\"/eshop/Assets/images/".$product_info->image_link.".jpg\""; ?>>
+			<img class="product_page_img"<?php echo "src=\"/eshop/Assets/images/".$product_info->image_link.".jpg\""; ?>>
 		</div>
 		<div class="col-xs-3" style="">
 			<h4>Rating: <?php 

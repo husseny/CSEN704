@@ -5,7 +5,7 @@ include_once("$root/eshop/Models/carts.php");
 include_once("$root/eshop/Models/products.php");
 
 $carts = carts::get_instance();
-$cart_id = $carts->get_last_cart(1)->id;
+$cart_id = $carts->get_last_cart($_SESSION['user_id']);
 
 
  if(isset($_SESSION['user_id']))
