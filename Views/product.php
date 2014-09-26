@@ -32,7 +32,6 @@ $out_of_stock = $product_info->stock == 0 ? true:false;
 			<h4>Discount: <?php echo $product_info->discount; ?>%</h4>
 			<p><?php echo $product_info->description; ?></p>
 
-			
 			<form method="post" action="/eshop/Controllers/cart_controller.php\">
 				<input type="submit" <?php echo ($out_of_stock)? "disabled":""; ?>
 				name="add_to_cart" value="Add to cart" class="btn btn-primary btn-lg" style="float:left;">
@@ -80,8 +79,6 @@ $out_of_stock = $product_info->stock == 0 ? true:false;
 	}
 		
 	?>
-
-
 </div>
 
 <?php include_once("$root/eshop/Views/__foot.php"); ?>

@@ -136,13 +136,15 @@ html body {
 }
 .product_box img {
 	height: 300px;
+	width: 300px;
+	min-height: 100px;
 	margin-top: 30px;
 	margin-left: -5px;
 }
 
 .product_box {
 	padding: 20px;
-	height: 520px;
+	height: 550px;
 	border: 1px solid #E8E8E8;
 	margin: 10px;
 	border-radius: 3px;

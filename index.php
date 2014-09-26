@@ -32,11 +32,11 @@ include_once("$root/eshop/Controllers/product_controller.php");
 				echo "<div class='col-xs-4'>";
 				echo "	<div class='product_box'>";
 				echo "		<a href='views/product.php?product_id=$product->id'>";
-				echo "			<img src='Assets/images/product$product->image_link.jpg'></img>";
+				echo "			<img class='img img-responsive' src='Assets/images/product$product->image_link.jpg'></img>";
 				echo "		</a>";
 				echo "		<h3 class='row'><span class='pull-left'>";
 				echo "		<a href='views/product.php?product_id=$product->id'>";
-				echo 			$product->title ;
+				echo 			substr($product->title, 0, 55);
 				echo "			</span>";
 				echo "		</a>";
 				echo "		</h3>" ;
@@ -55,7 +55,7 @@ include_once("$root/eshop/Controllers/product_controller.php");
 					}else{
 						echo "<i class='fa fa-star fa-lg star_dull'></i>";
 					}
-				}				
+				}
 				echo "		<h3 class='row'><span class='pull-left'>";
 				echo (isset($old_price))?"<span class='pull-right striked'>$$old_price</span>":"";
 				echo "			<span class='pull-right'>$". number_format($price, 2). " </span>";
