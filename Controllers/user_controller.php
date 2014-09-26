@@ -130,7 +130,7 @@ function get_username($user_id){
 }
 
 function user_has_reviewed_product($product_id){
-	if (isset($_POST['user_id'])){
+	if (isset($_SESSION['user_id'])){
 		$user_id = $_SESSION['user_id'];
 		$reviews = reviews::get_instance();
 		$params = sprintf("user_id = $user_id AND product_id = $product_id");
