@@ -40,6 +40,7 @@ else if(isset($_POST['buy_products']))
 	echo "<script> location.replace('$new_path'); </script>";
 	die();
 }
+// Author: Ahmed
 elseif (isset($_POST['add_to_cart'])) {
 	global $products;
 	$product_id = $_POST['product_id'];
