@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 25, 2014 at 10:23 AM
+-- Generation Time: Sep 26, 2014 at 12:16 PM
 -- Server version: 5.5.38-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.4
 
@@ -31,10 +31,18 @@ CREATE TABLE IF NOT EXISTS `carts` (
   `user_id` int(11) NOT NULL,
   `total_price` int(11) NOT NULL DEFAULT '0',
   `completed` tinyint(4) NOT NULL DEFAULT '0',
-  `transaction_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `transaction_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`id`, `user_id`, `total_price`, `completed`, `transaction_time`) VALUES
+(2, 1, 0, 1, '2014-09-25 21:36:39'),
+(3, 1, 0, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -46,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `carts_products` (
   `cart_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `item_price` int(11) NOT NULL,
   KEY `cart_id` (`cart_id`),
   KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

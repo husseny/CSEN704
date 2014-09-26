@@ -3,7 +3,7 @@ abstract class base {
 	public $pdo;
 	private $host = "localhost";
 	private $user = "root";
-	private $dbname= "eshop";
+	private $dbname= "eShop";
 	private $password = "";
 	static $instances = array();
 
