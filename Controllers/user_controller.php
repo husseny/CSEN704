@@ -119,5 +119,10 @@ function update_avatar_action(){
 	}
 	$new_path = "/eshop/Views/settings.php";
 	echo "<script> location.replace('$new_path'); </script>";
+}
+
+function get_username($user_id){
+	global $users;
+	return $users->get_info("id = ".$user_id, "user_name")->user_name;
 }	
 ?>
