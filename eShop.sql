@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 09:11 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Sep 27, 2014 at 05:38 AM
+-- Server version: 5.5.38-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `eshop`
+-- Database: `eShop`
 --
 
 -- --------------------------------------------------------
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `category` varchar(50) NOT NULL,
   `added_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `products`
@@ -124,7 +124,15 @@ INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stoc
 (7, 'Trofeo Monza Men''s Road/Racing', 'Fuji collapsible/folding bike. It is a special edition MARLBORO bike given out during a promotion in the 80''s I believe. Has a few scratches and scuffs and definitely shows wear from age and use. There is some surface rust in areas, especially on the seat post. The bike collapses with ease. It basically folds in half', 169, 10, 5, 3, 'product7', 'Electronics', '2014-09-26 17:44:35'),
 (8, 'fitbit zip Activity Tracker', 'This is a factory sealed unopened fitbit zip.\r\n\r\nWhat''s included: Tracker, Clip, Battery, Wireless USB dongle, Battery tool, Free Fitbit Account. \r\n\r\n It is also compatible with Windows XP, and Mac OS 10.5.\r\n\r\n It Syncs with iPhone 4S, and Bluetooth 4.0 or Bluetooth Smart Ready devices.', 120, 0, 12, 3, 'fitbit', 'Electronics', '2014-09-26 17:44:35'),
 (9, 'HTC-One-X-16GB-', 'Bedienung über Touchscreen, Digitaler Pegelmesser, AF-Sperre, GPS-fähig, USB 2.0-Kompatibilität, Auto Lighting Optimiser, Chromatic Aberration Compensation (CAC), Gesichtserkennung, digitale Bildrotation, RGB-Primärfarbfilter, Eye-Fi-Karte möglich, RAW-Bearbeitung in Kamera, Multiframe-Rauschreduzierung, Exif Print-Unterstützung, LCD-M', 124, 12, 12, 4, 'htc', 'Electronics', '2014-09-26 17:51:40'),
-(10, 'Canon EOS 70D 20,0 MP Digitalkamera', 'LCD-Monitor mit Live-Bild-Modus, 1080p Full HD-Filmaufnahme, Helligkeitsregelung der Anzeige, Highlight Point Display, Scene Intelligent Auto-Technologie, direkt Druck, Erkennung der Kameraausrichtung, AE-Schloss, DPOF Support, Schärfentiefekontrolle,', 949, 40, 15, 3, 'canon', 'Electronics', '2014-09-26 17:51:40');
+(10, 'Canon EOS 70D 20,0 MP Digitalkamera', 'LCD-Monitor mit Live-Bild-Modus, 1080p Full HD-Filmaufnahme, Helligkeitsregelung der Anzeige, Highlight Point Display, Scene Intelligent Auto-Technologie, direkt Druck, Erkennung der Kameraausrichtung, AE-Schloss, DPOF Support, Schärfentiefekontrolle,', 949, 40, 15, 3, 'canon', 'Electronics', '2014-09-26 17:51:40'),
+(11, 'Apple iPhone 5S', '', 5499, 10, 10, 0, 'iphone', 'electronics', '2014-09-27 02:36:17'),
+(12, 'Apple iPad Air', '', 5151, 10, 7, 0, 'ipad', 'electronics', '2014-09-27 02:36:17'),
+(13, 'Apple Macbook Air', '', 10000, 10, 12, 0, 'macbookair', 'electronics', '2014-09-27 02:36:17'),
+(14, 'Apple MacBook Pro With Retina Display', '', 23899, 10, 3, 0, 'macbookpro', 'electronics', '2014-09-27 02:36:17'),
+(15, 'Apple iPhone Bluetooth', '', 138, 10, 25, 0, 'iphonebluetooth', 'electronics', '2014-09-27 02:36:17'),
+(16, '85W Adapter Power Charger for Apple MacBook Pro', '', 450, 10, 9, 0, 'charger', 'electronics', '2014-09-27 02:36:17'),
+(17, 'Apple Magic Mouse', '', 699, 10, 1, 0, 'mouse', 'electronics', '2014-09-27 02:36:17'),
+(18, 'Apple Earpods With Remote And Mic', '', 45, 10, 0, 0, 'earpods', 'electronics', '2014-09-27 02:36:17');
 
 -- --------------------------------------------------------
 
