@@ -31,11 +31,11 @@ include_once("$root/eshop/Controllers/product_controller.php");
 			foreach($products_categorized as $product) {
 				echo "<div class='col-xs-4'>";
 				echo "	<div class='product_box'>";
-				echo "		<a href='views/product.php?product_id=$product->id'>";
+				echo "		<a href='Views/product.php?product_id=$product->id'>";
 				echo "			<img class='img img-responsive' src='Assets/images/$product->image_link.jpg'></img>";
 				echo "		</a>";
 				echo "		<h3 class='row'><span class='pull-left'>";
-				echo "		<a href='views/product.php?product_id=$product->id'>";
+				echo "		<a href='Views/product.php?product_id=$product->id'>";
 				echo 			substr($product->title, 0, 55);
 				echo "			</span>";
 				echo "		</a>";

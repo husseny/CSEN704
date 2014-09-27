@@ -13,7 +13,7 @@ $trans = 0;
 <?php
 if($result == 0 || $cart->total_price == 0)
 {
-  $message = "Your cart is empty";
+  $message = "<div class='alert alert-danger' role='alert'>You cart is empty</div>";
   echo $message;
 ?>
 

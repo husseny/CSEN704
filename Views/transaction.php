@@ -12,8 +12,7 @@ if(!isset($_SESSION['trans']))
 $result = $_SESSION['trans'];
 unset($_SESSION['trans']);
 $cart = $result['cart'];
-$time = date('H:i');
-$date = date('d/m/y');
+$time = date("D, d M Y H:i:s T", strtotime($cart->transaction_time) );
 $products = $result['products'];
 $trans =1;
 ?>
@@ -42,7 +41,7 @@ foreach ($products as $product) {
 </tr>
 <tr>
     <td class="col-md-6"><b>Transaction time</b></td>
-    <td class="col-md-4 center_element bold"><b><?php echo $time; echo " "; echo $date; ?></b></td>
+    <td class="col-md-4 center_element bold"><b><?php echo $time; ?></b></td>
 </tr>
 </table>
 </div>

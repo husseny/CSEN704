@@ -3,8 +3,9 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once("$root/eshop/Controllers/user_controller.php");
 include_once("$root/eshop/Controllers/product_controller.php");
+include_once("$root/eshop/Controllers/cart_controller.php");
 include_once("$root/eshop/Views/__head.php");
-
+$trans = 1;
 $profile_info = get_profile_info($_GET['user_name']);
 $user_reviews = get_reviews_for_user($profile_info->id);
 ?>
@@ -19,6 +20,7 @@ $user_reviews = get_reviews_for_user($profile_info->id);
 		<?php 
 		include("$root/eshop/Views/__user_reviews.php");
 		if ($profile_info->user_name == $_SESSION['user_name']){
+			$results = get_transactions_action();
 			include("$root/eshop/Views/__user_transactions.php");
 		} ?>
 	</div>
