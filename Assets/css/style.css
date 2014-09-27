@@ -32,6 +32,7 @@ html body {
 	border-radius: 4px;
 	margin-top: 20px;
 	margin-right: -10px;
+	background: white;
 }
 .avatar {
 	width: 180px;
@@ -53,6 +54,7 @@ html body {
 .bordered_section {
 	border: 1px solid #E8E8E8 ;
 	margin-bottom: 18px;
+	background: white;
 }
 
 .review_content {
@@ -182,4 +184,14 @@ html body {
 
 .bold {
 	font-weight: 400;
+
 }
+
+/*Transactions*/
+.transaction {
+	border: 1px solid #E8E8E8;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	background: white;
+}
+

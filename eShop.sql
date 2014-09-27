@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 08:53 PM
+-- Generation Time: Sep 26, 2014 at 09:11 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `carts` (
   `transaction_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `carts`
@@ -52,7 +52,8 @@ INSERT INTO `carts` (`id`, `user_id`, `total_price`, `completed`, `transaction_t
 (12, 2, 32, 1, '2014-09-26 15:57:06'),
 (13, 2, 8, 1, '2014-09-26 15:57:38'),
 (14, 2, 16, 1, '2014-09-26 15:58:08'),
-(15, 2, 8, 1, '2014-09-26 16:13:58');
+(15, 2, 8, 1, '2014-09-26 16:13:58'),
+(16, 2, 8, 1, '2014-09-26 19:00:25');
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,8 @@ INSERT INTO `carts_products` (`cart_id`, `product_id`, `quantity`, `item_price`)
 (12, 4, 4, 8),
 (13, 5, 1, 8),
 (14, 5, 2, 8),
-(15, 6, 1, 8);
+(15, 6, 1, 8),
+(16, 6, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,7 @@ INSERT INTO `products` (`id`, `title`, `description`, `price`, `discount`, `stoc
 (3, 'Pirate Fluxx - The Ever Changing Pirate Card Game.', '', 443, 20, 0, 2, 'product3', 'Electronics', '2014-09-22 14:23:25'),
 (4, 'Cthulhu Fluxx', '', 10, 20, 0, 5, 'product4', 'Electronics', '2014-09-23 12:34:12'),
 (5, 'Star Fluxx Robo-Doc / Android Doctor Promo Game Ca', '', 10, 20, 0, 2, 'product5', 'Electronics', '2014-09-23 12:34:18'),
-(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 3, 6, 'product6', 'Electronics', '2014-09-23 12:34:21'),
+(6, 'Star Fluxx The Ever Changing Card Game... In Space', '', 10, 20, 2, 6, 'product6', 'Electronics', '2014-09-23 12:34:21'),
 (7, 'Trofeo Monza Men''s Road/Racing', 'Fuji collapsible/folding bike. It is a special edition MARLBORO bike given out during a promotion in the 80''s I believe. Has a few scratches and scuffs and definitely shows wear from age and use. There is some surface rust in areas, especially on the seat post. The bike collapses with ease. It basically folds in half', 169, 10, 5, 3, 'product7', 'Electronics', '2014-09-26 17:44:35'),
 (8, 'fitbit zip Activity Tracker', 'This is a factory sealed unopened fitbit zip.\r\n\r\nWhat''s included: Tracker, Clip, Battery, Wireless USB dongle, Battery tool, Free Fitbit Account. \r\n\r\n It is also compatible with Windows XP, and Mac OS 10.5.\r\n\r\n It Syncs with iPhone 4S, and Bluetooth 4.0 or Bluetooth Smart Ready devices.', 120, 0, 12, 3, 'fitbit', 'Electronics', '2014-09-26 17:44:35'),
 (9, 'HTC-One-X-16GB-', 'Bedienung über Touchscreen, Digitaler Pegelmesser, AF-Sperre, GPS-fähig, USB 2.0-Kompatibilität, Auto Lighting Optimiser, Chromatic Aberration Compensation (CAC), Gesichtserkennung, digitale Bildrotation, RGB-Primärfarbfilter, Eye-Fi-Karte möglich, RAW-Bearbeitung in Kamera, Multiframe-Rauschreduzierung, Exif Print-Unterstützung, LCD-M', 124, 12, 12, 4, 'htc', 'Electronics', '2014-09-26 17:51:40'),
@@ -178,8 +180,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`first_name`, `last_name`, `password`, `user_name`, `id`, `avatar_id`) VALUES
-('namoo', 'naamoo', 'qaaaaz', 'naamoo', 1, 0),
-('noaa', 'noaaa', '123', 'noaa', 2, 3),
+('namoo', 'naamoo', 'qaaaaz', 'naamoo', 1, 1),
+('noaa', 'noaaa', '123', 'noaa', 2, 1),
 ('der', 'teri', '145', 'iserteri', 3, 0),
 ('gar', 'ghti', '1dd45', 'rin', 4, 0),
 ('', '', '', '', 5, 0),
