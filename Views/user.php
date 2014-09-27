@@ -21,7 +21,8 @@ $user_reviews = get_reviews_for_user($profile_info->id);
 		include("$root/eshop/Views/__user_reviews.php");
 		if ($profile_info->user_name == $_SESSION['user_name']){
 			$results = get_transactions_action();
-			include("$root/eshop/Views/__user_transactions.php");
+			if($results != 0)
+				include("$root/eshop/Views/__user_transactions.php");
 		} ?>
 	</div>
 </div>
